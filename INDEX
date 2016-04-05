@@ -1,0 +1,10 @@
+EnvSysSample            R function to perform a environmental systemic
+                        sampling design
+RGBplot                 R function to plot the realized versus the
+                        potential distribution using a RGB colour space
+iSDM-package            Invasive Species Distribution Modelling
+invasionForce           R function to compute a negative exponential
+                        dispersal kernel
+likelihoodCA            R function to compute the likelihood of
+                        detecting contingent absences within
+                        distributional dataset
