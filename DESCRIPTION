@@ -1,0 +1,18 @@
+Package: iSDM
+Type: Package
+Title: Invasive Species Distribution Modelling
+Version: 1.0
+Date: 2016-04-05
+Author: Hattab Tarek & Jonathan Lenoir
+Maintainer: Hattab Tarek <hattab.tarek@gmail.com>
+Description: iSDM is an open-source R package that implements a few functions
+    useful for modeling the spatial distribution of invasive species
+Depends: R (>= 3.2.0)
+Imports: ade4, geometry, geosphere, maptools, MASS, pdist, raster,
+        rgdal, rgl, sp,
+License: MIT
+RoxygenNote: 5.0.1
+Vignettes: SDM, Species distribution modelling, invasive species,RGB
+        plot
+NeedsCompilation: no
+Packaged: 2016-04-05 13:24:18 UTC; tarek
