@@ -9,7 +9,7 @@
 #'@details This function campute the likelihood of detecting contingent absences within a network of presence-absence data. It's based on the idea that absences data that are environmentally close but geographically distant to presences data are more likely to be contingent absences. 
 #'@return Returns a SpatialPointsDataFrame containing the likelihood values  
 #'@export
-#'@references Tarek Hattab, Ruben Van De Kerchove, Ben Somers, Boris Brasseur, Carol Ximena Garz?n L?pez, Duccio Rocchini, Emilie Gallet-Moron, Fabien Spicher, Guillaume Decocq, Hannes Feilhauer, Hélène Horen, Jens Warrie, Michael Ewald, Olivier Honnay, Pieter Kempeneers, Raf Aerts, Sandra Skowronek, Sebastian Schmidtlein and Jonathan Lenoir (In prep).An unified framework to model the potential and realized distributions of invasive species within the invaded range
+#'@references Tarek Hattab, Ruben Van De Kerchove, Ben Somers, Boris Brasseur, Carol Ximena Garz?n L?pez, Duccio Rocchini, Emilie Gallet-Moron, Fabien Spicher, Guillaume Decocq, Hannes Feilhauer, HÃ©lÃ¨ne Horen, Jens Warrie, Michael Ewald, Olivier Honnay, Pieter Kempeneers, Raf Aerts, Sandra Skowronek, Sebastian Schmidtlein and Jonathan Lenoir (In prep).An unified framework to model the potential and realized distributions of invasive species within the invaded range
 #'@examples
 #'library(raster)
 #'library(sp)
@@ -137,7 +137,7 @@ likelihoodCA<-function(occData,coords=NULL, envData, longlat=TRUE,nf=5){
   envWeight<-(1-(envWeight-min(envWeight))/(max(envWeight)-min(envWeight))) 
   
   absence@data$envWeight<-envWeight
-  presence@data$envWeight<-rep(1,dim(presence)[1])
+  presence@data$envWeight<-rep(0,dim(presence)[1])
   occRes<-spRbind(presence,absence)
   occRes$LCA<-(occRes$envWeight+occRes$geoWeight)/2
   occRes<-occRes[,"LCA"]
