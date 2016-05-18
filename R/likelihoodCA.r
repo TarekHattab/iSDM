@@ -101,7 +101,7 @@ likelihoodCA<-function(occData,coords=NULL, envData, longlat=TRUE,nf=5){
                      geoWeight<-(distGeo-min(distGeo))/(max(distGeo)-min(distGeo))}
   
   absence@data$geoWeight<-geoWeight
-  presence@data$geoWeight<-rep(1,dim(presence)[1])
+  presence@data$geoWeight<-rep(0,dim(presence)[1])
   
   
   if(any(sapply(occEnv,is.factor)[-1])|any(sapply(occEnv,is.ordered)[-1])){ordi<-dudi.mix(occEnv[,-1],scannf=F,nf=nf)
