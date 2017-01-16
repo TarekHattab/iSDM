@@ -50,3 +50,4 @@ plot(Mysampling3[[1]],add=TRUE,col=2)
 \references{
 Tarek Hattab, Michael Ewald, Sandra Skowronek, Raf Aerts, Carol X. Garzón-López, Hélène Horen, Boris Brasseur, Emilie Gallet-Moron, Fabien Spicher, Guillaume Decocq, Hannes Feilhauer, Olivier Honnay, Pieter Kempeneers, Sebastian Schmidtlein, Ben Somers, Ruben Van De Kerchove, Duccio Rocchini and Jonathan Lenoir (In prep). An unified framework to model the potential and realized distributions of invasive species within the invaded range
 }
+
