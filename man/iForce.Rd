@@ -13,7 +13,7 @@ iForce(occData,coords,a,envData,binary=TRUE,longlat=NULL)
 
 \item{a}{An integer between 0 and 1 that controls the form of the dispersal kernel}
 
-\item{envData}{Either a SpatialPointsDataFrame or a SpatialGridDataFrame as defined in package sp or a RasterStack or RasterBrick as defined in package raster. This object will be used to determine the area for which the negative exponential dispersal kernel will be calculated}
+\item{envData}{Either a SpatialPixelsDataFrame or a SpatialGridDataFrame as defined in package sp or a Raster or RasterLayer as defined in package raster. This object will be used to determine the area for which the negative exponential dispersal kernel will be calculated}
 
 \item{binary}{A logic indicating whether the occData object contains presences/absences data or only the geographical coordinates of presences data (default=TRUE)}
 
@@ -35,7 +35,8 @@ envData<-envData[[1]]
 #Generate randomly a SpatilaPointsDataFrame containing occurrences
 xy<-coordinates(envData)[sample(which(is.na(values(envData))==FALSE),100),]
 occ<-ifelse(xy[,2]>50,0,1)
-occData<-SpatialPointsDataFrame(coords=xy,data=as.data.frame(occ), proj4string = CRS(proj4string(envData)))
+occData<-SpatialPointsDataFrame(coords=xy,data=as.data.frame(occ), 
+proj4string = CRS(proj4string(envData)))
 
 par(mfrow=c(3,3),mar=c(1.5,1.5,1.5,1.5))
 for (a in c(0.01,0.03,0.05,0.06,0.09,0.1,0.3,0.6,0.9)){
@@ -44,6 +45,5 @@ plot(propagule,main=paste("a = ",a))
 plot(occData,col=ifelse(occData@data[,1]==1,1,0),add=TRUE,cex=0.3)}
 }
 \references{
-Tarek Hattab, Michael Ewald, Sandra Skowronek, Raf Aerts, Carol X. Garzón-López, Hélène Horen, Boris Brasseur, Emilie Gallet-Moron, Fabien Spicher, Guillaume Decocq, Hannes Feilhauer, Olivier Honnay, Pieter Kempeneers, Sebastian Schmidtlein, Ben Somers, Ruben Van De Kerchove, Duccio Rocchini and Jonathan Lenoir (In prep). An unified framework to model the potential and realized distributions of invasive species within the invaded range
+Tarek Hattab, Carol Ximena Garzon Lopez, Michael Ewald, Sandra Skowronek, Raf Aerts, Helene Horen, Boris Brasseur, Emilie Gallet-Moron, Fabien Spicher, Guillaume Decocq, Hannes Feilhauer, Olivier Honnay, Pieter Kempeneers, Sebastian Schmidtlein, Ben Somers, Ruben Van De Kerchove, Duccio Rocchini and Jonathan Lenoir (Accpeted). A unified framework to model the potential and realized distributions of invasive species within the invaded range. Diversity and Distributions.
 }
-

@@ -7,7 +7,7 @@
 eSample(envData,nExpect,plot=TRUE,saveShape=TRUE,nf,lowerLim,upperLim)
 }
 \arguments{
-\item{envData}{Either a SpatialPointsDataFrame, a SpatilPixelsDataFrame, or a SpatialGridDataFrame as defined in package sp or a RasterStack or RasterBrick as defined in package raster. Note that this object can contain a mixture of variables type (quantitative, factor and ordered)}
+\item{envData}{Either a SpatilPixelsDataFrame or a SpatialGridDataFrame as defined in package sp or a RasterStack or RasterBrick as defined in package raster. Note that this object can contain a mixture of variables type (quantitative, factor and ordered)}
 
 \item{nExpect}{Numeric number of desired sampling points. Note that sometime the exact expected number can not be reached because this function tries to find a grid that best matches the expected number}
 
@@ -36,18 +36,20 @@ envData<-getData('worldclim', var='bio', res=10)
 envData<-crop(envData,extent(-10,45,20,75))
 plot(envData)
 par(mfrow=c(1,2))
-Mysampling1<-eSample(envData,nExpect=50,plot=TRUE,saveShape=TRUE,nf=2,lowerLim=0.00001,upperLim=0.99999)
+Mysampling1<-eSample(envData,nExpect=50,plot=TRUE,
+saveShape=TRUE,nf=2,lowerLim=0.00001,upperLim=0.99999)
 plot(envData[[1]])
 plot(Mysampling1[[1]],add=TRUE,col=2,pch=19)
 par(mfrow=c(1,2))
-Mysampling2<-eSample(envData,nExpect=50,plot=TRUE,saveShape=TRUE,nf=2,lowerLim=0.1,upperLim=0.9)
+Mysampling2<-eSample(envData,nExpect=50,plot=TRUE,
+saveShape=TRUE,nf=2,lowerLim=0.1,upperLim=0.9)
 plot(envData[[1]])
 plot(Mysampling2[[1]],add=TRUE,col=2,pch=19)
-Mysampling3<-eSample(envData,nExpect=50,plot=TRUE,saveShape=TRUE,nf=3,lowerLim=0.001,upperLim=0.999)
+Mysampling3<-eSample(envData,nExpect=50,plot=TRUE,
+saveShape=TRUE,nf=3,lowerLim=0.001,upperLim=0.999)
 plot(envData[[1]])
 plot(Mysampling3[[1]],add=TRUE,col=2)
 }
 \references{
-Tarek Hattab, Michael Ewald, Sandra Skowronek, Raf Aerts, Carol X. Garzón-López, Hélène Horen, Boris Brasseur, Emilie Gallet-Moron, Fabien Spicher, Guillaume Decocq, Hannes Feilhauer, Olivier Honnay, Pieter Kempeneers, Sebastian Schmidtlein, Ben Somers, Ruben Van De Kerchove, Duccio Rocchini and Jonathan Lenoir (In prep). An unified framework to model the potential and realized distributions of invasive species within the invaded range
+Tarek Hattab, Carol Ximena Garzon Lopez, Michael Ewald, Sandra Skowronek, Raf Aerts, Helene Horen, Boris Brasseur, Emilie Gallet-Moron, Fabien Spicher, Guillaume Decocq, Hannes Feilhauer, Olivier Honnay, Pieter Kempeneers, Sebastian Schmidtlein, Ben Somers, Ruben Van De Kerchove, Duccio Rocchini and Jonathan Lenoir (Accpeted). A unified framework to model the potential and realized distributions of invasive species within the invaded range. Diversity and Distributions.
 }
-

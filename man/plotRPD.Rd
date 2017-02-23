@@ -30,8 +30,9 @@ envData<-getData('worldclim', var='bio', res=10)
 envData<-crop(envData,extent(-8,15,38,55))
 
 # Generate virtual species responses with formatfunctions
-my.parameters <- formatFunctions(bio1 = c(fun = "dnorm", mean = 140, sd = 40), bio5 = c(fun = "dnorm",
-mean = 230, sd = 70),bio6 = c(fun = "dnorm",mean = 10, sd = 40))
+my.parameters <- formatFunctions(bio1 = c(fun = "dnorm", mean = 140, sd = 40), 
+bio5 = c(fun = "dnorm",mean = 230, sd = 70),
+bio6 = c(fun = "dnorm",mean = 10, sd = 40))
 # Generate a virtual species potential distributions with responses to environmental variables
 potential.dist <- generateSpFromFun(envData[[c(1,5,6)]], my.parameters)$suitab.raster
 
@@ -41,10 +42,9 @@ cell.id<-which(coordinates(realized.dist)[,2]>48)
 dis.lim<-sample(seq(0,1,by=0.01),length(cell.id),replace=TRUE)
 values(realized.dist)[cell.id]<-ifelse(values(realized.dist)[cell.id]>dis.lim,
 values(realized.dist)[cell.id]-dis.lim,0)
-plotRPD(x=potential.dist,y=realized.dist,cex=0.6,xlab="Potential distribution"
+plotRPD(x=potential.dist,y=realized.dist,cex=0.8,xlab="Potential distribution"
 ,ylab="Realized distribution")
 }
 \references{
-Tarek Hattab, Michael Ewald, Sandra Skowronek, Raf Aerts, Carol X. Garzón-López, Hélène Horen, Boris Brasseur, Emilie Gallet-Moron, Fabien Spicher, Guillaume Decocq, Hannes Feilhauer, Olivier Honnay, Pieter Kempeneers, Sebastian Schmidtlein, Ben Somers, Ruben Van De Kerchove, Duccio Rocchini and Jonathan Lenoir (In prep). An unified framework to model the potential and realized distributions of invasive species within the invaded range
+Tarek Hattab, Carol Ximena Garzon Lopez, Michael Ewald, Sandra Skowronek, Raf Aerts, Helene Horen, Boris Brasseur, Emilie Gallet-Moron, Fabien Spicher, Guillaume Decocq, Hannes Feilhauer, Olivier Honnay, Pieter Kempeneers, Sebastian Schmidtlein, Ben Somers, Ruben Van De Kerchove, Duccio Rocchini and Jonathan Lenoir (Accpeted). A unified framework to model the potential and realized distributions of invasive species within the invaded range. Diversity and Distributions.
 }
-

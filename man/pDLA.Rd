@@ -9,7 +9,7 @@ pDLA(occData,envData, longlat=TRUE,nf=5,occNative=NULL,envNative=NULL)
 \arguments{
 \item{occData}{A SpatialPointsDataFrame as defined in package sp containing species data (a single species) in binary format (ones for presences, zeros for absences)}
 
-\item{envData}{An abject containing your explanatory variables. Either a SpatialPointsDataFrame or SpatialGridDataFrame as defined in package sp or a RasterStack or RasterBrick as defined in package raster. Note that this object can contain a mixture of variables type (quantitative, factor and ordered).}
+\item{envData}{An abject containing your explanatory variables. Either a SpatialPixelsDataFrame or SpatialGridDataFrame as defined in package sp or a RasterStack or RasterBrick as defined in package raster. Note that this object can contain a mixture of variables type (quantitative, factor and ordered).}
 
 \item{longlat}{A logic indicating whether point coordinates are projected (longitude-latitude decimal degrees) or not (for plane) (default=TRUE)}
 
@@ -38,8 +38,9 @@ envData<-getData('worldclim', var='bio', res=10)
 envData<-crop(envData,extent(-8,15,38,55))
 
 #Generate virtual species responses with formatfunctions 
-my.parameters <- formatFunctions(bio1 = c(fun = "dnorm", mean = 140, sd = 40), bio5 = c(fun = "dnorm",
-mean = 230, sd = 70),bio6 = c(fun = "dnorm",mean = 10, sd = 40))
+my.parameters <- formatFunctions(bio1 = c(fun = "dnorm", mean = 140, sd = 40),
+bio5 = c(fun = "dnorm",mean = 230, sd = 70),
+bio6 = c(fun = "dnorm",mean = 10, sd = 40))
 
 #Generate a virtual species distributions with responses to environmental variables
 potential.dist <- generateSpFromFun(envData[[c(1,5,6)]], my.parameters)
@@ -91,6 +92,5 @@ probability<-pDLA(occData=occData,envData=envData[[c(1,5,6)]],longlat=TRUE,
 occNative=occNative,envNative=envNative[[c(1,5,6)]])
 }
 \references{
-Tarek Hattab, Michael Ewald, Sandra Skowronek, Raf Aerts, Carol X. Garzón-López, Hélène Horen, Boris Brasseur, Emilie Gallet-Moron, Fabien Spicher, Guillaume Decocq, Hannes Feilhauer, Olivier Honnay, Pieter Kempeneers, Sebastian Schmidtlein, Ben Somers, Ruben Van De Kerchove, Duccio Rocchini and Jonathan Lenoir (In prep). An unified framework to model the potential and realized distributions of invasive species within the invaded range
+Tarek Hattab, Carol Ximena Garzon Lopez, Michael Ewald, Sandra Skowronek, Raf Aerts, Helene Horen, Boris Brasseur, Emilie Gallet-Moron, Fabien Spicher, Guillaume Decocq, Hannes Feilhauer, Olivier Honnay, Pieter Kempeneers, Sebastian Schmidtlein, Ben Somers, Ruben Van De Kerchove, Duccio Rocchini and Jonathan Lenoir (Accpeted). A unified framework to model the potential and realized distributions of invasive species within the invaded range. Diversity and Distributions.
 }
-
