@@ -11,6 +11,7 @@
 #'@references Tarek Hattab, Carol Ximena Garzon Lopez, Michael Ewald, Sandra Skowronek, Raf Aerts, Helene Horen, Boris Brasseur, Emilie Gallet-Moron, Fabien Spicher, Guillaume Decocq, Hannes Feilhauer, Olivier Honnay, Pieter Kempeneers, Sebastian Schmidtlein, Ben Somers, Ruben Van De Kerchove, Duccio Rocchini and Jonathan Lenoir (Accpeted). A unified framework to model the potential and realized distributions of invasive species within the invaded range. Diversity and Distributions.
 #'@export
 #'@examples
+#'\dontrun{
 #'library(raster)
 #'library(sp)
 #'envData<-getData('worldclim', var='bio', res=10)
@@ -28,6 +29,7 @@
 #'propagule<-iForce(occData,envData=envData,a=a,binary=TRUE,longlat=TRUE)
 #'plot(propagule,main=paste("a = ",a))
 #'plot(occData,col=ifelse(occData@data[,1]==1,1,0),add=TRUE,cex=0.3)}
+#'}
 
 iForce<-function(occData,coords=NULL,a=NULL,envData,binary=TRUE,longlat=NULL){
 
@@ -53,7 +55,7 @@ iForce<-function(occData,coords=NULL,a=NULL,envData,binary=TRUE,longlat=NULL){
 
   if(class(occData)=="SpatialPointsDataFrame" & binary==F) {presence<-sp::coordinates(occData)}
 
-  if(!(class(envData) %in% c("SpatialGridDataFrame","SpatialPixelsDataFrame","Raster","RasterLayer"))){stop("The envData  object must be either a SpatialPixelsDataFrame a SpatialGridDataFrame a RasterStack or a RasterBrick" )}
+  if(!(class(envData) %in% c("SpatialGridDataFrame","SpatialPixelsDataFrame","Raster","RasterLayer"))){stop("The envData  object must be either a SpatialPixelsDataFrame a SpatialGridDataFrame a Raster or a RasterLayer" )}
 
   if(class(envData) %in% c("SpatialGridDataFrame","SpatialPixelsDataFrame")) {envData<-raster::raster(envData)}
    

@@ -21,6 +21,7 @@ plotRPD(x=x,y=y,cex,xlab=xlab,ylab=ylab)
 R function to plot the realized versus the potential distribution using a RGB colour space
 }
 \examples{
+\dontrun{
 library(raster)
 library(sp)
 library(virtualspecies)
@@ -44,6 +45,7 @@ values(realized.dist)[cell.id]<-ifelse(values(realized.dist)[cell.id]>dis.lim,
 values(realized.dist)[cell.id]-dis.lim,0)
 plotRPD(x=potential.dist,y=realized.dist,cex=0.8,xlab="Potential distribution"
 ,ylab="Realized distribution")
+}
 }
 \references{
 Tarek Hattab, Carol Ximena Garzon Lopez, Michael Ewald, Sandra Skowronek, Raf Aerts, Helene Horen, Boris Brasseur, Emilie Gallet-Moron, Fabien Spicher, Guillaume Decocq, Hannes Feilhauer, Olivier Honnay, Pieter Kempeneers, Sebastian Schmidtlein, Ben Somers, Ruben Van De Kerchove, Duccio Rocchini and Jonathan Lenoir (Accpeted). A unified framework to model the potential and realized distributions of invasive species within the invaded range. Diversity and Distributions.

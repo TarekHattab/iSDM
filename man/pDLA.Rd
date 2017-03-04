@@ -29,6 +29,7 @@ R function to compute the probability of detecting dispersal-limited absences
 This function campute the probability of detecting dispersal-limited absences within a network of presence-absence data. It's based on the idea that absences data that are environmentally close but geographically distant to presences data are more likely to be dispersal-limited absences. This function allows combining presence data from both the native and the invaded range, note that in this case the set of presence from the native range will only be added to the set of presences from the invaded range when calculating distances between absences and presences in the environnental space as it does not make sens to add presence data from the native range when calculating these distances within the geographical space.
 }
 \examples{
+\dontrun{
 library(raster)
 library(sp)
 library(virtualspecies)
@@ -74,9 +75,7 @@ colorFunction <- colorRamp(matlab.like(100))
 zMatrix <- colorFunction(x)
 zColors <- rgb(zMatrix[,1], zMatrix[,2], zMatrix[,3], maxColorValue=255)
 return(zColors)}
-
 points(probability,pch=21, col=1,bg=scatterCol(probability@data[,"PDLA"]),cex=1)
-
 # Example based on occurrences from both the invaded and the native range 
 envData<-getData('worldclim', var='bio', res=10)
 envNative<-crop(envData,extent(-90,-70,20,40))
@@ -91,6 +90,10 @@ plot(occNative,add=TRUE,pch=19,cex=0.8)
 probability<-pDLA(occData=occData,envData=envData[[c(1,5,6)]],longlat=TRUE,
 occNative=occNative,envNative=envNative[[c(1,5,6)]])
 }
+}
 \references{
 Tarek Hattab, Carol Ximena Garzon Lopez, Michael Ewald, Sandra Skowronek, Raf Aerts, Helene Horen, Boris Brasseur, Emilie Gallet-Moron, Fabien Spicher, Guillaume Decocq, Hannes Feilhauer, Olivier Honnay, Pieter Kempeneers, Sebastian Schmidtlein, Ben Somers, Ruben Van De Kerchove, Duccio Rocchini and Jonathan Lenoir (Accpeted). A unified framework to model the potential and realized distributions of invasive species within the invaded range. Diversity and Distributions.
+}
+\seealso{
+<http://diarsproject.github.io/DIARS/SDM.html>
 }

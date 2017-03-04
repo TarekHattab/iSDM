@@ -1,5 +1,5 @@
 #' \code{\link{roxygenize}}.
 #'@description iSDM is an open-source R package that implements a few functions useful for modeling the spatial distribution of invasive species
-#'@details This package contains the following 4 functions: EnvSysSample, invasionForce, likelihoodCA, RGBplot
+#'@details This package contains the following 4 functions: eSample, iForce, pDLA, RPDplot
 #'@references Tarek Hattab, Carol Ximena Garzon Lopez, Michael Ewald, Sandra Skowronek, Raf Aerts, Helene Horen, Boris Brasseur, Emilie Gallet-Moron, Fabien Spicher, Guillaume Decocq, Hannes Feilhauer, Olivier Honnay, Pieter Kempeneers, Sebastian Schmidtlein, Ben Somers, Ruben Van De Kerchove, Duccio Rocchini and Jonathan Lenoir (Accpeted). A unified framework to model the potential and realized distributions of invasive species within the invaded range. Diversity and Distributions.
 #'@seealso <http://diarsproject.github.io/DIARS/SamplingDesign.html> <http://diarsproject.github.io/DIARS/SDM.html>

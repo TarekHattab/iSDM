@@ -31,6 +31,7 @@ R function to perform environmental systematic sampling
 The environmental systematic sampling consists in reducing the environmental space into 2 or 3 dimensions using an ordination method (the dudi.mixt method in ade4 package) as a first step. Thereafter convex hull will be created around the reduced environmental space. Then, a multidimensional grid will be created inside the convex hull. The obtained grid represents the perfect configuration required to adequately survey the environmental space. The last step is subsequently to seek the closest pixel to this ideal configuration. This is achieved by searching the nearest neighbour between each grid point and each pixel in the environmental space based on Euclidean distances
 }
 \examples{
+\dontrun{
 library(raster)
 envData<-getData('worldclim', var='bio', res=10)
 envData<-crop(envData,extent(-10,45,20,75))
@@ -50,6 +51,10 @@ saveShape=TRUE,nf=3,lowerLim=0.001,upperLim=0.999)
 plot(envData[[1]])
 plot(Mysampling3[[1]],add=TRUE,col=2)
 }
+}
 \references{
 Tarek Hattab, Carol Ximena Garzon Lopez, Michael Ewald, Sandra Skowronek, Raf Aerts, Helene Horen, Boris Brasseur, Emilie Gallet-Moron, Fabien Spicher, Guillaume Decocq, Hannes Feilhauer, Olivier Honnay, Pieter Kempeneers, Sebastian Schmidtlein, Ben Somers, Ruben Van De Kerchove, Duccio Rocchini and Jonathan Lenoir (Accpeted). A unified framework to model the potential and realized distributions of invasive species within the invaded range. Diversity and Distributions.
+}
+\seealso{
+<http://diarsproject.github.io/DIARS/SamplingDesign.html>
 }

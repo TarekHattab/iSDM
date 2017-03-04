@@ -9,6 +9,7 @@
 #'@export
 #'@references Tarek Hattab, Carol Ximena Garzon Lopez, Michael Ewald, Sandra Skowronek, Raf Aerts, Helene Horen, Boris Brasseur, Emilie Gallet-Moron, Fabien Spicher, Guillaume Decocq, Hannes Feilhauer, Olivier Honnay, Pieter Kempeneers, Sebastian Schmidtlein, Ben Somers, Ruben Van De Kerchove, Duccio Rocchini and Jonathan Lenoir (Accpeted). A unified framework to model the potential and realized distributions of invasive species within the invaded range. Diversity and Distributions.
 #'@examples
+#'\dontrun{
 #'library(raster)
 #'library(sp)
 #'library(virtualspecies)
@@ -33,6 +34,8 @@
 
 #'plotRPD(x=potential.dist,y=realized.dist,cex=0.8,xlab="Potential distribution"
 #',ylab="Realized distribution")
+#'}
+
 
 plotRPD<-function(x=x,y=y,cex=0.5,xlab=xlab,ylab=ylab) {
   if(class(x)!=class(y)) {stop("x and Y  must belong to the same class")}

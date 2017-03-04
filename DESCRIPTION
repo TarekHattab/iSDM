@@ -5,14 +5,16 @@ Version: 1.0
 Date: 2016-04-05
 Author: Tarek Hattab & Jonathan Lenoir
 Maintainer: Tarek Hattab <hattab.tarek@gmail.com>
-Description: iSDM is a collection of useful functions for modeling the spatial distribution of invasive species
+Description: Implementations functions for predicting and mapping potential and realized distributions of invasive species within the invaded range.
+Details: This package contains the following 4 functions: eSample,
+        iForce, pDLA, RPDplot
+Seealso: <https://github.com/TarekHattab/sPlot>
 Depends: R (>= 3.2.0)
-Suggests: colorRamps,virtualspecies,rgl
 Imports: stats,utils,graphics,ade4,
-        geometry,geosphere,maptools,MASS,pdist,raster,rgdal,sp
+        geometry,geosphere,maptools,MASS,pdist,raster,rgdal,sp,colorRamps,virtualspecies,rgl
 License: GPL-3
 RoxygenNote: 6.0.1
 Vignettes: SDM, species distribution modelling, invasive species, RGB
         plot
 NeedsCompilation: no
-Packaged: 2017-02-23 13:52:56 UTC; natha
+Packaged: 2017-03-04 18:14:46 UTC; natha
