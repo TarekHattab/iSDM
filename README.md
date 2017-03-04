@@ -38,7 +38,7 @@ envData<-crop(Worldclim,extent(-8,15,38,55))
 plot(envData[[c(1,5,6)]],main=c("BIO1","BIO5","BIO6"),col=bpy.colors(100))
 ```
 
-<img src="README_files/figure-markdown_github/Figure1-1.png" style="display: block; margin: auto;" />
+<img src="README_files/Figure1-1.png" style="display: block; margin: auto;" />
 
 Install the virtualspecies package to simulate a virtual species distribution data
 
