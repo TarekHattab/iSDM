@@ -5,7 +5,7 @@ Version: 1.0
 Date: 2016-04-05
 Author: Tarek Hattab & Jonathan Lenoir
 Maintainer: Tarek Hattab <hattab.tarek@gmail.com>
-Description: Implementations functions for predicting and mapping potential and realized distributions of invasive species within the invaded range.
+Description: Functions for predicting and mapping potential and realized distributions of invasive species within the invaded range.
 Details: This package contains the following 4 functions: eSample,
         iForce, pDLA, RPDplot
 Seealso: <https://github.com/TarekHattab/sPlot>
@@ -17,4 +17,4 @@ RoxygenNote: 6.0.1
 Vignettes: SDM, species distribution modelling, invasive species, RGB
         plot
 NeedsCompilation: no
-Packaged: 2017-03-04 18:14:46 UTC; natha
+Packaged: 2017-03-04 19:12:52 UTC; natha
