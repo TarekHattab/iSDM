@@ -16,7 +16,6 @@ library(iSDM)
 To install the most recent version from GitHub:
 
 ``` r
-library(iSDM)
 install.packages("devtools")
 devtools::install_github("TarekHattab/iSDM")
 ```
