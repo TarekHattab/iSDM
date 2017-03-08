@@ -8,7 +8,7 @@ Maintainer: Tarek Hattab <hattab.tarek@gmail.com>
 Description: Functions for predicting and mapping potential and realized distributions of invasive species within the invaded range.
 Details: This package contains the following 4 functions: eSample,
         iForce, pDLA, RPDplot
-Seealso: <https://github.com/TarekHattab/sPlot>
+Seealso: <https://github.com/TarekHattab/iSDM>
 Depends: R (>= 3.2.0)
 Imports: stats,utils,graphics,ade4,
         geometry,geosphere,maptools,MASS,pdist,raster,rgdal,sp,colorRamps,virtualspecies,rgl
