@@ -146,7 +146,7 @@ Mysampling2<-eSample(envData,nExpect=50,plot=TRUE,saveShape=TRUE,nf=3,lowerLim=0
       |========================================================         |  86%
     ## [1] "-----------------52 points found---------------------"
 
-<img src="README_files/Figure 4-1.png" style="display: block; margin: auto;" />
+<img src="README_files/movie.gif" style="display: block; margin: auto;" />
 
 The pDLA function
 =================
