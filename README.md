@@ -68,7 +68,7 @@ plot(realized.dist$occupied.area, main="Realized distribution", col=bpy.colors(1
 plot(potential.dist$suitab.raster, main="Potential distribution", col=bpy.colors(100))
 ```
 
-<img src="README_files/figure-markdown_github/Figure 2-1.png" style="display: block; margin: auto;" />
+<img src="README_files/Figure 2-1.png" style="display: block; margin: auto;" />
 
 The eSample function
 ====================
@@ -117,7 +117,7 @@ plot(envData[[1]], col=bpy.colors(100))
 plot(Mysampling1[[1]], add=TRUE, col=1, pch=19)
 ```
 
-<img src="README_files/figure-markdown_github/Figure 3-1.png" style="display: block; margin: auto;" />
+<img src="README_files/Figure 3-1.png" style="display: block; margin: auto;" />
 
 Exemple using 3 ordination axes:
 
@@ -147,7 +147,7 @@ Mysampling2<-eSample(envData, nExpect=50, plot=TRUE, saveShape=TRUE, nf=3, lower
       |========================================================         |  86%
     ## [1] "-----------------52 points found---------------------"
 
-<img src="README_files/figure-markdown_github/Figure 4-1.png" style="display: block; margin: auto;" />
+<img src="README_files/Figure 4-1.png" style="display: block; margin: auto;" />
 
 The pDLA function
 =================
@@ -163,7 +163,7 @@ plot(realized.dist$occupied.area, main="Realized distribution", col=bpy.colors(1
 plot(occData, col=ifelse(occData$SP == 0, "red", "green4"), add=T)
 ```
 
-<img src="README_files/figure-markdown_github/Figure 5-1.png" style="display: block; margin: auto;" />
+<img src="README_files/Figure 5-1.png" style="display: block; margin: auto;" />
 
 The **pDLA** function computes the probability of detecting dispersal-limited absences within a network of presence-absence data
 
@@ -173,7 +173,7 @@ library(colorRamps)
 spplot(probability, sp.layout = list("sp.points", as(realized.dist$occupied.area, "SpatialPointsDataFrame"), first=T,col=1), col.regions=matlab.like(100), cuts = 10)
 ```
 
-<img src="README_files/figure-markdown_github/Figure6-1.png" style="display: block; margin: auto;" />
+<img src="README_files/Figure6-1.png" style="display: block; margin: auto;" />
 
 Example based on occurrences from both the invaded and the native ranges
 
@@ -187,14 +187,14 @@ plot(native.dist, main="Native range distribution", col=bpy.colors(100))
 plot(occNative, add=TRUE, pch=19, cex=0.8)
 ```
 
-<img src="README_files/figure-markdown_github/Figure7-1.png" style="display: block; margin: auto;" />
+<img src="README_files/Figure7-1.png" style="display: block; margin: auto;" />
 
 ``` r
 probability<-pDLA(occData=occData, envData=envData[[c(1, 5, 6)]], longlat=TRUE, occNative=occNative, envNative=envNative[[c(1, 5, 6)]])
 spplot( probability,sp.layout = list("sp.points",as(realized.dist$occupied.area,"SpatialPointsDataFrame"),first=T,col=1),col.regions=matlab.like(100),cuts = 10)
 ```
 
-<img src="README_files/figure-markdown_github/Figure7-2.png" style="display: block; margin: auto;" />
+<img src="README_files/Figure7-2.png" style="display: block; margin: auto;" />
 
 The iForce function
 ===================
@@ -209,7 +209,7 @@ plot(propagule, main=paste("a = ", a), col=bpy.colors(100))
 plot(occData, col=ifelse(occData@data[,1]==1, 1, 0), add=TRUE, cex=0.3)}
 ```
 
-<img src="README_files/figure-markdown_github/Figure8-1.png" style="display: block; margin: auto;" />
+<img src="README_files/Figure8-1.png" style="display: block; margin: auto;" />
 
 The plotRPD function
 ====================
@@ -220,4 +220,4 @@ The **plotRPD** function plots the realized distribution versus the potential di
 plotRPD(x=potential.dist$suitab.raster, y=realized.dist$occupied.area, cex=0.5, xlab="Potential distribution", ylab="Realized distribution")
 ```
 
-<img src="README_files/figure-markdown_github/Figure9-1.png" style="display: block; margin: auto;" />
+<img src="README_files/Figure9-1.png" style="display: block; margin: auto;" />
