@@ -6,7 +6,7 @@ iSDM is an open-source R package that implements a few functions useful for mode
 How to get started
 ==================
 
-Install and load the R package from CRAN using the following commands on the R console (currently not available):
+Install and load the R package from CRAN using the following commands on the R console :
 
 ``` r
 install.packages("iSDM")
