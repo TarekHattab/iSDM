@@ -192,7 +192,7 @@ plot(occNative, add=TRUE, pch=19, cex=0.8)
 
 ``` r
 probability<-pDLA(occData=occData, envData=envData[[c(1, 5, 6)]], longlat=TRUE, occNative=occNative, envNative=envNative[[c(1, 5, 6)]])
-spplot( probability,sp.layout=list("sp.points",as(realized.dist$occupied.area,"SpatialPointsDataFrame"),first=T,col=1),col.regions=matlab.like(100),cuts=10)
+spplot( probability, sp.layout=list("sp.points", as(realized.dist$occupied.area ,"SpatialPointsDataFrame"), first=T,col=1), col.regions=matlab.like(100), cuts=10)
 ```
 
 <img src="README_files/Figure7-2.png" style="display: block; margin: auto;" />
