@@ -6,7 +6,7 @@ iSDM is an open-source R package that implements a few functions useful for mode
 How to get started
 ==================
 
-Install and load the R package from CRAN using the following commands on the R console :
+Install and load the R package from CRAN using the following commands on the R console:
 
 ``` r
 install.packages("iSDM")
@@ -49,7 +49,7 @@ library(virtualspecies)
 Generate virtual species responses with formatFunctions
 
 ``` r
-my.parameters<-formatFunctions(bio1=c(fun ="dnorm", mean=140, sd=40), bio5=c(fun="dnorm", mean=230, sd=70), bio6=c(fun ="dnorm", mean=10, sd=40))
+my.parameters<-formatFunctions(bio1=c(fun="dnorm", mean=140, sd=40), bio5=c(fun="dnorm", mean=230, sd=70), bio6=c(fun="dnorm", mean=10, sd=40))
 ```
 
 Generate the distribution of your virtual species based on environmental conditions across the study area and the niche parameters you just have set in the former function for these environmental variables
@@ -151,6 +151,8 @@ Mysampling2<-eSample(envData, nExpect=50, plot=TRUE, saveShape=TRUE, nf=3, lower
 The pDLA function
 =================
 
+The aim of using the **pDLA** function is to provide a continuous variable (cf. a probability value) to help sorting absence data into dispersal-limited absences (high pDLA values above a given threshold) and environmental absences (low pDLA values below the threshold)
+
 We will first use the environmental systematic sampling desing (the object <Mysampling1> created using the **eSample** function) and the realized distribution map to generate a presence absence dataset (using a probability threshold of 0.5)
 
 ``` r
@@ -159,7 +161,7 @@ occData<-data.frame(coordinates(Mysampling1[[1]]), SP=ifelse(occData>0.5, 1, 0))
 coordinates(occData)<-~x+y
 proj4string(occData)<-proj4string(envData)
 plot(realized.dist$occupied.area, main="Realized distribution", col=bpy.colors(100))
-plot(occData, col=ifelse(occData$SP == 0, "red", "green4"), add=T)
+plot(occData, col=ifelse(occData$SP==0, "red", "green4"), add=T)
 ```
 
 <img src="README_files/Figure 5-1.png" style="display: block; margin: auto;" />
@@ -169,7 +171,7 @@ The **pDLA** function computes the probability of detecting dispersal-limited ab
 ``` r
 probability<-pDLA(occData=occData, envData=envData[[c(1, 5, 6)]], longlat=TRUE)
 library(colorRamps)
-spplot(probability, sp.layout = list("sp.points", as(realized.dist$occupied.area, "SpatialPointsDataFrame"), first=T,col=1), col.regions=matlab.like(100), cuts = 10)
+spplot(probability, sp.layout=list("sp.points", as(realized.dist$occupied.area, "SpatialPointsDataFrame"), first=T,col=1), col.regions=matlab.like(100), cuts=10)
 ```
 
 <img src="README_files/Figure6-1.png" style="display: block; margin: auto;" />
@@ -190,7 +192,7 @@ plot(occNative, add=TRUE, pch=19, cex=0.8)
 
 ``` r
 probability<-pDLA(occData=occData, envData=envData[[c(1, 5, 6)]], longlat=TRUE, occNative=occNative, envNative=envNative[[c(1, 5, 6)]])
-spplot( probability,sp.layout = list("sp.points",as(realized.dist$occupied.area,"SpatialPointsDataFrame"),first=T,col=1),col.regions=matlab.like(100),cuts = 10)
+spplot( probability,sp.layout=list("sp.points",as(realized.dist$occupied.area,"SpatialPointsDataFrame"),first=T,col=1),col.regions=matlab.like(100),cuts=10)
 ```
 
 <img src="README_files/Figure7-2.png" style="display: block; margin: auto;" />
@@ -198,10 +200,10 @@ spplot( probability,sp.layout = list("sp.points",as(realized.dist$occupied.area,
 The iForce function
 ===================
 
-The **iForce** function compute a negative exponential dispersal kernel to account for dispersal limitation which is a feature of the realized distribution
+The **iForce** function computes a negative exponential dispersal kernel to account for dispersal limitation which is a feature of the realized distribution
 
 ``` r
-par(mfrow=c(3, 3),mar=c(1.5, 1.5, 1.5, 1.5))
+par(mfrow=c(3, 3), mar=c(1.5, 1.5, 1.5, 1.5))
 for (a in c(0.01, 0.03, 0.05, 0.06, 0.09, 0.1, 0.3, 0.6, 0.9)){
 propagule<-iForce(occData, envData=envData[[1]], a=a, binary=TRUE, longlat=TRUE)
 plot(propagule, main=paste("a = ", a), col=bpy.colors(100))
