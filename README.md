@@ -33,7 +33,7 @@ library(raster)
 
 ``` r
 Worldclim<-getData('worldclim', var='bio', res=10)
-envData<-crop(Worldclim,extent(-8, 15, 38, 55))
+envData<-crop(Worldclim, extent(-8, 15, 38, 55))
 plot(envData[[c(1,5,6)]], main=c("BIO1", "BIO5", "BIO6"), col=bpy.colors(100))
 ```
 
@@ -179,7 +179,7 @@ spplot(probability, sp.layout=list("sp.points", as(realized.dist$occupied.area, 
 Example based on occurrences from both the invaded and the native ranges
 
 ``` r
-envNative<-crop(Worldclim,extent(-90, -70, 20, 40))
+envNative<-crop(Worldclim, extent(-90, -70, 20, 40))
 native.dist<-generateSpFromFun(envNative[[c(1, 5, 6)]], my.parameters)
 occNative<-as.data.frame(coordinates(native.dist$suitab.raster)[sample(which(values(native.dist$suitab.raster)>0.5), 100), ])
 coordinates(occNative)<-~x+y
