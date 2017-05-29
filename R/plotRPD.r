@@ -53,8 +53,8 @@ plotRPD<-function(x=x,y=y,cex=0.5,xlab=xlab,ylab=ylab) {
   y<-y[names(x)]
   XY<-XY[names(x),]
   RGB<-matrix(NA,ncol=3,nrow=length(x))
-  RGB[,1]<-(x-min(x)/(max(x)-min(x)))*255
-  RGB[,2]<-(y-min(y)/(max(y)-min(y)))*255
+  RGB[,1]<-((x-min(x))/(max(x)-min(x)))*255
+  RGB[,2]<-((y-min(y))/(max(y)-min(y)))*255
   RGB[,3]<-c(255-RGB[,1])
   col<-grDevices::rgb(RGB[,1],RGB[,2],RGB[,3],maxColorValue =255)
   graphics::layout(mat=matrix(c(2,1),ncol=2,nrow=1),widths=c(0.8,0.8))
