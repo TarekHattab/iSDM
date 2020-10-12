@@ -48,7 +48,7 @@ eSample<-function(envData,nExpect=NULL,plot=TRUE,saveShape=TRUE,nf=3,lowerLim=0.
                                                     rownames(XY)<-rownames(x)
                                                     x<-stats::na.omit(x)
                                                     XY<-XY[rownames(x),]}
-  if(class(envData) %in% c("SpatilPixelsDataFrame")){x<-envData@data
+  if(class(envData) %in% c("SpatialPixelsDataFrame")){x<-envData@data
                                                                               rownames(x)<-seq(1:dim(x)[1])
                                                                               XY<-sp::coordinates(envData)}
   if(class(envData) %in% c("RasterStack","RasterBrick")){x<-raster::values(envData)
