@@ -136,7 +136,7 @@ eSample<-function(envData,nExpect=NULL,plot=TRUE,saveShape=TRUE,nf=3,lowerLim=0.
   if(plot==T & nf==3){rgl::open3d()
                       rgl::plot3d(x[,1], x[,2], x[,3], r = 0.2,xlab="Axis 1",ylab="Axis 2",zlab="Axis 3")
                       rgl::plot3d(output[[2]][,1],output[[2]][,2],output[[2]][,3], col=2, type ="s",r=.1,add=T)
-                      rgl::rgl.triangles(x[conv,1],x[conv,2],x[conv,3],col=2,alpha=0.2)
+                      rgl::triangles3d(x[conv,1],x[conv,2],x[conv,3],col=2,alpha=0.2)
                       moncube<-rgl::cube3d(col = "red")
                       moncube$vb[1,] <- moncube$vb[1,]*output[[4]][1]
                       moncube$vb[2,] <- moncube$vb[2,]*output[[4]][2]
